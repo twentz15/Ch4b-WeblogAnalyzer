@@ -30,7 +30,17 @@ public class LogAnalyzer
         reader = new LogfileReader(filename);
     }
     
-    
+    public int numberofAccesses()
+    { 
+      int total = 0; 
+        
+      for(int hour = 0; hour < hourCounts.length; hour++) 
+      { 
+          total = total + hourCounts[hour]; 
+      } 
+      return total; 
+    } 
+
 
     /**
      * Analyze the hourly access data from the log file.
