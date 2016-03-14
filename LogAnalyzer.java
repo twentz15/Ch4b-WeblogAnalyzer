@@ -40,6 +40,50 @@ public class LogAnalyzer
       } 
       return total; 
     } 
+    
+    public int busyHour() 
+    { 
+         int numOfAccessesAtBusiest = 0; 
+         int busyHour = 0; 
+         int index = 0; 
+          
+         while (index < hourCounts.length -1) 
+         { 
+             if (numOfAccessesAtBusiest < hourCounts[index]) 
+             { 
+                 busyHour = index; 
+                 numOfAccessesAtBusiest = hourCounts[index]; 
+                 index++; 
+             } 
+             else 
+             { 
+                 index++; 
+             } 
+         } 
+         return busyHour; 
+     } 
+     
+    public int quietHour() { 
+        int numOfAccessesAtQuietest = 9999; 
+        int quietHour = 0; 
+        int index = 0; 
+        
+        while (index < hourCounts.length -1) 
+        {              
+            if (numOfAccessesAtQuietest > hourCounts[index])
+            {  
+               quietHour = index; 
+               numOfAccessesAtQuietest = hourCounts[index]; 
+               index++; 
+            } 
+            else 
+            { 
+               index++; 
+            } 
+        }          
+        return quietHour; 
+     } 
+
 
 
     /**
